@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col hour" data-value = "9">
+          9am
+        </div>
+        <div contentEditable="true" type = "text" class="col-8 textarea" id = "9aminput">
+          </div>
+        <div class="col saveBtn">
+          <i class="fas fa-save" id = "save1"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col hour" data-value = "10">
+          10am
+        </div>
+        <div contentEditable="true"class="col-8 textarea" id = "10aminput">
+          </div>
+        <div class="col saveBtn">
+          <i class="fas fa-save" id = "save2"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col hour" data-value = "11">
+          11am
+        </div>
+        <div contentEditable="true" class="col-8 textarea" id = "11aminput">
+        </div>
+        <div class="col saveBtn">
+          <i class="fas fa-save" id = "save3"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col hour" data-value = "12">
+          12pm
+        </div>
+        <div contentEditable="true" class="col-8 textarea" id = "12pminput">
+        </div>
+        <div class="col saveBtn">
+          <i class="fas fa-save" id = "save4"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col hour" data-value = "13">
+          1pm
+        </div>
+        <div contentEditable="true" class="col-8 textarea" id = "1pminput">
+        </div>
+        <div class="col saveBtn">
+          <i class="fas fa-save" id = "save5"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col hour" data-value = "14">
+          2pm
+        </div>
+        <div contentEditable="true" class="col-8 textarea" id = "2pminput">
+        </div>
+        <div class="col saveBtn">
+          <i class="fas fa-save" id = "save6"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col hour" data-value = "15">
+          3pm
+        </div>
+        <div contentEditable="true" class="col-8 textarea" id = "3pminput">
+        </div>
+        <div class="col saveBtn">
+          <i class="fas fa-save" id = "save7"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col hour" data-value = "16">
+          4pm
+        </div>
+        <div contentEditable="true" class="col-8 textarea" id = "4pminput">
+        </div>
+        <div class="col saveBtn">
+          <i class="fas fa-save" id = "save8"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col hour" data-value = "17">
+          5pm
+        </div>
+        <div contentEditable="true" class="col-8 textarea" id = "5pminput">
+        </div>
+        <div class="col saveBtn">
+          <i class="fas fa-save" id = "save9"></i>
+        </div>
+      </div>
+    
+     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <script>
+      //show date
+      var d = new Date();
+      document.getElementById("currentDay").innerHTML = d;
+
+      
+      var am9input = document.getElementById("9aminput")
+      var am10input = document.getElementById("10aminput")
+      var am11input = document.getElementById("11aminput")
+      var pm12input = document.getElementById("12pminput")
+      var pm1input = document.getElementById("1pminput")
+      var pm2input = document.getElementById("2pminput")
+      var pm3input = document.getElementById("3pminput")
+      var pm4input = document.getElementById("4pminput")
+      var pm5input = document.getElementById("5pminput")
+
+      //save the entries for each time
+      $("#save1").on("click", function(event) {
+        localStorage.setItem("9am", am9input.innerHTML)
+      } );
+      $("#save2").on("click", function(event) {
+        localStorage.setItem("10am", am10input.innerHTML)
+      } );
+      $("#save3").on("click", function(event) {
+        localStorage.setItem("11am", am11input.innerHTML)
+      } );
+      $("#save4").on("click", function(event) {
+        localStorage.setItem("12pm", pm12input.innerHTML)
+      } );
+      $("#save5").on("click", function(event) {
+        localStorage.setItem("1pm", pm1input.innerHTML)
+      } );
+      $("#save6").on("click", function(event) {
+        localStorage.setItem("2pm", pm2input.innerHTML)
+      } );
+      $("#save7").on("click", function(event) {
+        localStorage.setItem("3pm", pm3input.innerHTML)
+      } );
+      $("#save8").on("click", function(event) {
+        localStorage.setItem("4pm", pm4input.innerHTML)
+      } );
+      $("#save9").on("click", function(event) {
+        localStorage.setItem("5pm", pm5input.innerHTML)
+      } );
+
+      function renderLastSaved() {
+        var input = localStorage.getItem("9am");
+         am9input.textContent = input;
+         var input = localStorage.getItem("10am");
+         am10input.textContent = input;
+         var input = localStorage.getItem("11am");
+         am11input.textContent = input;
+         var input = localStorage.getItem("12pm");
+         pm12input.textContent = input;
+         var input = localStorage.getItem("1pm");
+         pm1input.textContent = input;
+         var input = localStorage.getItem("2pm");
+         pm2input.textContent = input;
+         var input = localStorage.getItem("3pm");
+         pm3input.textContent = input;
+         var input = localStorage.getItem("4pm");
+         pm4input.textContent = input;
+         var input = localStorage.getItem("5pm");
+         pm5input.textContent = input;
+
+      }
+
+      renderLastSaved();
+//change color based on time
+      var d = new Date();
+      var n = d.getHours();
+      var value = $(".hour")
+            
+      $(value).each(function(){
+        var hour = $(".hour").attr("data-value")
+        if (n === parseInt(hour)){
+        $(".textarea").addClass("present");
+      } else if (n > parseInt(hour)){
+        $(".textarea").addClass("past");
+      }
+      else{
+        $(".textarea").addClass("future");
+      }
+
+      });
+
+     
+
+    </script>
+  </body>
+</html>
