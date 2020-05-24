@@ -30,90 +30,90 @@
     </header>
     <div class="container">
       <div class="row">
-        <div class="col hour" data-value = "9">
+        <div class="col hour">
           9am
         </div>
-        <div contentEditable="true" type = "text" class="col-8 textarea" id = "9aminput">
+        <div contentEditable="true" type = "text" class="col-8 textarea" id = "9aminput" data-value = "9">
           </div>
         <div class="col saveBtn">
           <i class="fas fa-save" id = "save1"></i>
         </div>
       </div>
       <div class="row">
-        <div class="col hour" data-value = "10">
+        <div class="col hour" >
           10am
         </div>
-        <div contentEditable="true"class="col-8 textarea" id = "10aminput">
+        <div contentEditable="true"class="col-8 textarea" id = "10aminput" data-value = "10">
           </div>
         <div class="col saveBtn">
           <i class="fas fa-save" id = "save2"></i>
         </div>
       </div>
       <div class="row">
-        <div class="col hour" data-value = "11">
+        <div class="col hour" >
           11am
         </div>
-        <div contentEditable="true" class="col-8 textarea" id = "11aminput">
+        <div contentEditable="true" class="col-8 textarea" id = "11aminput" data-value = "11">
         </div>
         <div class="col saveBtn">
           <i class="fas fa-save" id = "save3"></i>
         </div>
       </div>
       <div class="row">
-        <div class="col hour" data-value = "12">
+        <div class="col hour">
           12pm
         </div>
-        <div contentEditable="true" class="col-8 textarea" id = "12pminput">
+        <div contentEditable="true" class="col-8 textarea" id = "12pminput"  data-value = "12">
         </div>
         <div class="col saveBtn">
           <i class="fas fa-save" id = "save4"></i>
         </div>
       </div>
       <div class="row">
-        <div class="col hour" data-value = "13">
+        <div class="col hour" >
           1pm
         </div>
-        <div contentEditable="true" class="col-8 textarea" id = "1pminput">
+        <div contentEditable="true" class="col-8 textarea" id = "1pminput" data-value = "13">
         </div>
         <div class="col saveBtn">
           <i class="fas fa-save" id = "save5"></i>
         </div>
       </div>
       <div class="row">
-        <div class="col hour" data-value = "14">
+        <div class="col hour" >
           2pm
         </div>
-        <div contentEditable="true" class="col-8 textarea" id = "2pminput">
+        <div contentEditable="true" class="col-8 textarea" id = "2pminput" data-value = "14">
         </div>
         <div class="col saveBtn">
           <i class="fas fa-save" id = "save6"></i>
         </div>
       </div>
       <div class="row">
-        <div class="col hour" data-value = "15">
+        <div class="col hour" >
           3pm
         </div>
-        <div contentEditable="true" class="col-8 textarea" id = "3pminput">
+        <div contentEditable="true" class="col-8 textarea" id = "3pminput" data-value = "15">
         </div>
         <div class="col saveBtn">
           <i class="fas fa-save" id = "save7"></i>
         </div>
       </div>
       <div class="row">
-        <div class="col hour" data-value = "16">
+        <div class="col hour" >
           4pm
         </div>
-        <div contentEditable="true" class="col-8 textarea" id = "4pminput">
+        <div contentEditable="true" class="col-8 textarea" id = "4pminput" data-value = "16">
         </div>
         <div class="col saveBtn">
           <i class="fas fa-save" id = "save8"></i>
         </div>
       </div>
       <div class="row">
-        <div class="col hour" data-value = "17">
+        <div class="col hour" >
           5pm
         </div>
-        <div contentEditable="true" class="col-8 textarea" id = "5pminput">
+        <div contentEditable="true" class="col-8 textarea" id = "5pminput" data-value = "17">
         </div>
         <div class="col saveBtn">
           <i class="fas fa-save" id = "save9"></i>
@@ -196,22 +196,100 @@
 //change color based on time
       var d = new Date();
       var n = d.getHours();
-      var value = $(".hour")
-            
-      $(value).each(function(){
-        var hour = $(".hour").attr("data-value")
-        if (n === parseInt(hour)){
-        $(".textarea").addClass("present");
-      } else if (n > parseInt(hour)){
-        $(".textarea").addClass("past");
+      
+      var value = $("#9aminput").attr("data-value")
+      if (n === parseInt(value)){
+        $("#9aminput").addClass("present");
+      } else if (n > parseInt(value)){
+        $("#9aminput").addClass("past");
       }
       else{
-        $(".textarea").addClass("future");
+        $("#9aminput").addClass("future");
+      }     
+
+
+      var value2 = $("#10aminput").attr("data-value")
+      if (n === parseInt(value2)){
+        $("#10aminput").addClass("present");
+      } else if (n > parseInt(value2)){
+        $("#10aminput").addClass("past");
       }
+      else{
+        $("#10aminput").addClass("future");
+      }     
 
-      });
+      var value3 = $("#11aminput").attr("data-value")
+      if (n === parseInt(value3)){
+        $("#11aminput").addClass("present");
+      } else if (n > parseInt(value3)){
+        $("#11aminput").addClass("past");
+      }
+      else{
+        $("#11aminput").addClass("future");
+      }     
 
-     
+      var value4 = $("#12pminput").attr("data-value")
+      if (n === parseInt(value4)){
+        $("#12pminput").addClass("present");
+      } else if (n > parseInt(value4)){
+        $("#12pminput").addClass("past");
+      }
+      else{
+        $("#12pminput").addClass("future");
+      }     
+
+      var value5 = $("#1pminput").attr("data-value")
+      if (n === parseInt(value5)){
+        $("#1pminput").addClass("present");
+      } else if (n > parseInt(value5)){
+        $("#1pminput").addClass("past");
+      }
+      else{
+        $("#1pminput").addClass("future");
+      }     
+
+      var value6 = $("#2pminput").attr("data-value")
+      if (n === parseInt(value6)){
+        $("#2pminput").addClass("present");
+      } else if (n > parseInt(value6)){
+        $("#2pminput").addClass("past");
+      }
+      else{
+        $("#2pminput").addClass("future");
+      }     
+
+      var value7 = $("#3pminput").attr("data-value")
+      if (n === parseInt(value7)){
+        $("#3pminput").addClass("present");
+      } else if (n > parseInt(value7)){
+        $("#3pminput").addClass("past");
+      }
+      else{
+        $("#3pminput").addClass("future");
+      }     
+
+      var value8 = $("#4pminput").attr("data-value")
+      if (n === parseInt(value8)){
+        $("#4pminput").addClass("present");
+      } else if (n > parseInt(value8)){
+        $("#4pminput").addClass("past");
+      }
+      else{
+        $("#4pminput").addClass("future");
+      }     
+
+      var value9 = $("#5pminput").attr("data-value")
+      if (n === parseInt(value9)){
+        $("#5pminput").addClass("present");
+      } else if (n > parseInt(value9)){
+        $("#5pminput").addClass("past");
+      }
+      else{
+        $("#5pminput").addClass("future");
+      }     
+
+
+    
 
     </script>
   </body>
